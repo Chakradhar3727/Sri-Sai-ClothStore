@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 14 12 15;
+    --foreground: 250 246 240;
+  }
+
+  body {
+    background-color: #0E0C0F;
+    color: #FAF6F0;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom Festive Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141113;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F7E7A9;
+}
+
+/* Luxury Aesthetics & Glassmorphism Utilities */
+.festive-glass {
+  background: rgba(22, 17, 20, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.festive-glass-card {
+  background: linear-gradient(145deg, rgba(28, 22, 26, 0.85) 0%, rgba(16, 13, 15, 0.95) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.festive-glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 12px 36px -8px rgba(212, 175, 55, 0.16), 0 0 1px 1px rgba(212, 175, 55, 0.3);
+  transform: translateY(-4px);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F7E7A9 0%, #D4AF37 50%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-subtle {
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.22);
+}
+
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
