@@ -169,56 +169,65 @@ export default function App() {
       <MughalArchMask />
       
       {/* 1. UTILITY TOP BAR (Bilingual & Mobile Adaptive) */}
-      <div className="bg-dasara-maroon text-white text-[11px] sm:text-xs font-sans tracking-wider sm:tracking-widest py-1.5 sm:py-2 px-3 sm:px-8 flex justify-between items-center border-b border-white/10 relative z-50">
-        <div className="flex items-center gap-1.5 sm:gap-2 mx-auto sm:mx-0">
+      <div className="bg-dasara-maroon text-white text-[10.5px] sm:text-xs font-sans py-1.5 sm:py-2 px-3 sm:px-8 flex justify-between items-center border-b border-white/10 relative z-50">
+        <div className="flex items-center gap-1.5 sm:gap-2 mx-auto sm:mx-0 text-center">
           <Sparkles className="w-3 h-3 text-dasara-gold shrink-0" />
-          <span className="truncate">
-            DASARA FESTIVE UTSAV • కోడ్: <strong className="text-dasara-gold font-bold">DASARA500</strong> • <span className="telugu-text">నేరుగా మగ్గాల ధరలు</span>
+          <span className="sm:hidden tracking-wide">
+            DASARA SPECIAL: <strong className="text-dasara-gold font-bold">DASARA500</strong> • <span className="telugu-text">నేరుగా మగ్గాల ధరలు</span>
+          </span>
+          <span className="hidden sm:inline tracking-widest">
+            DASARA GRAND FESTIVE UTSAV • IN-STORE VOUCHER: <strong className="text-dasara-gold font-bold">DASARA500</strong> • <span className="telugu-text">నేరుగా మగ్గాల ధరలు</span>
           </span>
         </div>
-        <div className="text-white/80 hidden sm:block">DIRECT LOOM WHOLESALE PRICING</div>
+        <div className="text-white/80 hidden sm:block tracking-widest text-xs">DIRECT LOOM WHOLESALE PRICING</div>
       </div>
 
-      {/* 2. MAIN HEADER & LOGO STRIP */}
-      <header className="bg-dasara-champagne py-3.5 sm:py-6 px-3 sm:px-8 sticky top-0 z-40 shadow-sm border-b border-[#e5dfd3]/50 backdrop-blur-md bg-dasara-champagne/95">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+      {/* 2. MAIN HEADER & LOGO STRIP (Refined Mobile Proportions & Spacing) */}
+      <header className="bg-dasara-champagne py-2.5 sm:py-6 px-3.5 sm:px-8 sticky top-0 z-40 shadow-sm border-b border-[#e5dfd3]/50 backdrop-blur-md bg-dasara-champagne/95">
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between relative">
           
           {/* LEFT: Admin Access */}
-          <div className="flex-1 flex justify-start items-center">
+          <div className="flex-shrink-0 sm:flex-1 flex justify-start items-center z-10">
             <button
               onClick={() => { if (isAdmin) setIsAdminPortalOpen(true); else setIsAdminModalOpen(true); }}
-              className="group flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#551a24] uppercase font-sans hover:text-dasara-gold transition-colors cursor-pointer"
+              className="group flex items-center justify-center w-8 h-8 sm:w-auto sm:h-auto rounded-full hover:bg-black/5 sm:hover:bg-transparent text-[10px] sm:text-xs font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#551a24] uppercase font-sans hover:text-dasara-gold transition cursor-pointer"
+              aria-label={isAdmin ? 'Admin Portal' : 'Admin Access'}
+              title={isAdmin ? 'Admin Portal' : 'Admin Access'}
             >
               {isAdmin ? <Lock className="h-4 w-4 text-dasara-gold" /> : <User className="h-4 w-4" />}
-              <span className="hidden sm:inline border-b border-transparent group-hover:border-dasara-gold transition-colors">
+              <span className="hidden sm:inline border-b border-transparent group-hover:border-dasara-gold transition-colors ml-2">
                 {isAdmin ? 'Admin Portal' : 'Admin Access'}
               </span>
             </button>
           </div>
 
           {/* CENTER: Brand Identity */}
-          <div className="flex-shrink-0 flex items-center gap-2 sm:gap-4 cursor-pointer">
-            <Filigree className="hidden md:block w-20 h-6 text-dasara-gold" flipped />
-            <div className="flex flex-col items-center">
-              <h1 className="font-serif text-xl sm:text-3xl lg:text-4xl font-black tracking-widest text-[#551a24] text-center">SRI SAI CLOTHSTORE</h1>
-              <span className="font-serif text-[11px] sm:text-sm tracking-normal text-[#b08a47] mt-0.5 sm:mt-1 text-center font-medium telugu-text">శ్రీ సాయి క్లాత్ స్టోర్</span>
+          <div className="flex-1 flex items-center justify-center px-2 cursor-pointer z-0">
+            <Filigree className="hidden md:block w-20 h-6 text-dasara-gold shrink-0" flipped />
+            <div className="flex flex-col items-center text-center">
+              <h1 className="font-serif text-[15px] sm:text-3xl lg:text-4xl font-black tracking-[0.06em] sm:tracking-widest text-[#551a24] whitespace-nowrap leading-tight">
+                SRI SAI CLOTHSTORE
+              </h1>
+              <span className="font-serif text-[10px] sm:text-sm tracking-normal text-[#b08a47] font-medium telugu-text leading-tight mt-0.5">
+                శ్రీ సాయి క్లాత్ స్టోర్
+              </span>
             </div>
-            <Filigree className="hidden md:block w-20 h-6 text-dasara-gold" />
+            <Filigree className="hidden md:block w-20 h-6 text-dasara-gold shrink-0" />
           </div>
 
           {/* RIGHT: User Actions */}
-          <div className="flex-1 flex justify-end items-center gap-3 sm:gap-6 text-[#551a24]">
+          <div className="flex-shrink-0 sm:flex-1 flex justify-end items-center gap-2.5 sm:gap-6 text-[#551a24] z-10">
             <button 
               onClick={() => { const el = document.getElementById('catalog-section'); el?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="hover:text-dasara-gold transition cursor-pointer" 
+              className="w-8 h-8 sm:w-auto sm:h-auto flex items-center justify-center hover:text-dasara-gold transition cursor-pointer" 
               aria-label="Search Catalog"
               title="వెతకండి • Search"
             >
-              <Search className="h-4 sm:h-5 w-4 sm:w-5 stroke-[1.5]" />
+              <Search className="h-4 sm:h-5 w-4 sm:w-5 stroke-[1.75]" />
             </button>
             <button 
               onClick={() => handleOpenVideoConsult()} 
-              className="hidden sm:block hover:text-dasara-gold transition cursor-pointer" 
+              className="hidden sm:flex items-center justify-center hover:text-dasara-gold transition cursor-pointer" 
               aria-label="Live Video Shopping"
               title="వీడియో కాల్ షాపింగ్ • Live Video"
             >
@@ -226,26 +235,26 @@ export default function App() {
             </button>
             <button 
               onClick={() => setIsDrawerOpen(true)} 
-              className="relative hover:text-dasara-gold transition cursor-pointer" 
+              className="relative w-8 h-8 sm:w-auto sm:h-auto flex items-center justify-center hover:text-dasara-gold transition cursor-pointer" 
               aria-label="Wishlist"
               title="ఇష్టమైనవి • Wishlist"
             >
-              <Heart className="h-4 sm:h-5 w-4 sm:w-5 stroke-[1.5]" />
+              <Heart className="h-4 sm:h-5 w-4 sm:w-5 stroke-[1.75]" />
               {wishlistCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-[#4c0d17] text-white text-[9px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold font-sans">
+                <span className="absolute top-0.5 right-0.5 sm:-top-1.5 sm:-right-1.5 bg-[#4c0d17] text-white text-[8px] sm:text-[9px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold font-sans">
                   {wishlistCount}
                 </span>
               )}
             </button>
             <button 
               onClick={handleOpenInquiryBag} 
-              className="relative hover:text-dasara-gold transition cursor-pointer" 
+              className="relative w-8 h-8 sm:w-auto sm:h-auto flex items-center justify-center hover:text-dasara-gold transition cursor-pointer" 
               aria-label="Shopping Bag"
               title="విచారణ బ్యాగ్ • Inquiry Bag"
             >
-              <ShoppingBag className="h-4 sm:h-5 w-4 sm:w-5 stroke-[1.5]" />
+              <ShoppingBag className="h-4 sm:h-5 w-4 sm:w-5 stroke-[1.75]" />
               {wishlistCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-dasara-maroon text-dasara-champagne text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold font-sans shadow-md">
+                <span className="absolute top-0 right-0 sm:-top-2 sm:-right-2 bg-dasara-maroon text-dasara-champagne text-[9px] sm:text-[10px] w-3.5 sm:w-4 h-3.5 sm:h-4 flex items-center justify-center rounded-full font-bold font-sans shadow-md">
                   {wishlistCount}
                 </span>
               )}
