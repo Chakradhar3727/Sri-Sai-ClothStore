@@ -219,11 +219,11 @@ export default function App() {
           <div className="flex-shrink-0 sm:flex-1 flex justify-end items-center gap-2.5 sm:gap-6 text-[#551a24] z-10">
             <button 
               onClick={() => { const el = document.getElementById('catalog-section'); el?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="w-8 h-8 sm:w-auto sm:h-auto flex items-center justify-center hover:text-dasara-gold transition cursor-pointer" 
+              className="hidden sm:flex items-center justify-center hover:text-dasara-gold transition cursor-pointer" 
               aria-label="Search Catalog"
               title="వెతకండి • Search"
             >
-              <Search className="h-4 sm:h-5 w-4 sm:w-5 stroke-[1.75]" />
+              <Search className="h-5 w-5 stroke-[1.75]" />
             </button>
             <button 
               onClick={() => handleOpenVideoConsult()} 
