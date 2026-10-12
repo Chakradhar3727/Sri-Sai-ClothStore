@@ -59,10 +59,10 @@ export const WishlistDrawer: React.FC<Props> = ({
       />
 
       {/* Slide-over panel */}
-      <div className="fixed inset-y-0 right-0 flex max-w-full pl-6">
+      <div className="fixed inset-y-0 right-0 flex max-w-full pl-0 sm:pl-6 z-50">
         <div
           className={`w-screen ${
-            viewMode === 'compare' ? 'max-w-4xl' : 'max-w-md sm:max-w-lg'
+            viewMode === 'compare' ? 'max-w-4xl' : 'max-w-full sm:max-w-lg'
           } bg-[#f9f5ec] border-l border-[#b08a47]/30 shadow-2xl flex flex-col justify-between transition-all duration-300`}
         >
           
@@ -74,14 +74,14 @@ export const WishlistDrawer: React.FC<Props> = ({
                   <Heart className="h-5 w-5 text-[#4c0d17] fill-[#4c0d17]" />
                 </div>
                 <div>
-                  <h2 className="font-serif text-xl font-bold text-[#4c0d17] flex items-center gap-2">
-                    Festive Shortlist
+                  <h2 className="font-serif text-lg sm:text-xl font-bold text-[#4c0d17] flex items-center gap-2">
+                    Festive Shortlist • ఇష్టమైన చీరలు
                     <span className="rounded-full bg-[#b08a47]/10 text-[#b08a47] border border-[#b08a47]/30 px-2 py-0.5 text-xs font-mono font-bold">
                       {wishlist.length}
                     </span>
                   </h2>
-                  <p className="text-[11px] text-[#8a7a6b] font-sans">
-                    Handpicked sarees saved for consultation & trials
+                  <p className="text-[10px] sm:text-[11px] text-[#8a7a6b] font-sans">
+                    Handpicked sarees saved for consultation • ఎంపిక చేసిన చీరలు
                   </p>
                 </div>
               </div>
@@ -372,19 +372,19 @@ export const WishlistDrawer: React.FC<Props> = ({
                       onOpenInquiryBag();
                       onClose();
                     }}
-                    className="w-full bg-[#4c0d17] hover:bg-[#3d1118] border border-[#4c0d17] py-6 text-xs sm:text-sm font-bold text-[#f9f5ec] shadow-lg rounded-xl cursor-pointer transition hover:scale-[1.01]"
+                    className="w-full bg-[#4c0d17] hover:bg-[#3d1118] border border-[#4c0d17] py-6 text-xs sm:text-sm font-bold text-[#f9f5ec] shadow-lg rounded-xl cursor-pointer transition hover:scale-[1.01] flex items-center justify-center gap-2"
                   >
-                    <Sparkles className="h-4 w-4 mr-2 text-[#b08a47]" />
-                    Build Bridal Trousseau Inquiry ({wishlist.length} Sarees)
+                    <Sparkles className="h-4 w-4 text-[#b08a47]" />
+                    <span>Inquiry Bag • విచారణ బ్యాగ్ ({wishlist.length} చీరలు)</span>
                   </Button>
                 )}
 
                 <Button
                   onClick={() => window.open(getWhatsAppShortlistUrl(wishlist), '_blank')}
-                  className="w-full bg-[#065f46] hover:bg-[#044030] py-6 text-sm font-bold text-white shadow-lg rounded-xl cursor-pointer transition hover:scale-[1.01]"
+                  className="w-full bg-[#065f46] hover:bg-[#044030] py-6 text-xs sm:text-sm font-bold text-white shadow-lg rounded-xl cursor-pointer transition hover:scale-[1.01] flex items-center justify-center gap-2"
                 >
-                  <MessageCircle className="h-4 w-4 mr-2 text-[#b08a47]" />
-                  Quick Shortlist to WhatsApp
+                  <MessageCircle className="h-4 w-4 text-[#b08a47]" />
+                  <span>Send to WhatsApp • వాట్సాప్‌లో పంపండి</span>
                 </Button>
 
                 <div className="flex items-center justify-between pt-2">
@@ -393,11 +393,11 @@ export const WishlistDrawer: React.FC<Props> = ({
                     onClick={onClear}
                     className="text-[10px] font-bold uppercase tracking-widest text-[#8a7a6b] hover:text-[#4c0d17] transition cursor-pointer"
                   >
-                    Clear All Shortlisted
+                    Clear All • అన్నీ తొలగించండి
                   </button>
 
                   <span className="text-[10px] text-[#b08a47] font-bold uppercase tracking-widest">
-                    Sri Sai ClothStore Guarantee
+                    100% Pure Silk Guarantee
                   </span>
                 </div>
               </div>
