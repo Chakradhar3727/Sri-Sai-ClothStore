@@ -66,6 +66,41 @@ export function getProductTeluguSubtitle(category: string): string {
   }
 }
 
+export function getTeluguSareeName(name: string, category?: string): string {
+  const lower = name.toLowerCase();
+  if (lower.includes('kanchi') || lower.includes('kanchipuram')) {
+    return 'కంచి పట్టు చేనేత చీర';
+  }
+  if (lower.includes('banaras') || lower.includes('banarasi')) {
+    return 'బనారస్ రాయల్ జరీ చీర';
+  }
+  if (lower.includes('gadwal')) {
+    return 'గద్వాల్ సంప్రదాయ చేనేత';
+  }
+  if (lower.includes('dharmavaram')) {
+    return 'ధర్మవరం పట్టు చీర';
+  }
+  if (lower.includes('mysore')) {
+    return 'మైసూర్ పట్టు చీర';
+  }
+  if (lower.includes('organza')) {
+    return 'ఆర్గంజా డిజైనర్ చీర';
+  }
+  if (lower.includes('tissue')) {
+    return 'గోల్డెన్ టిష్యూ పట్టు చీర';
+  }
+  if (lower.includes('fancy')) {
+    return 'నూతన ఫ్యాన్సీ చీర';
+  }
+  if (lower.includes('pattu')) {
+    return 'స్వచ్ఛమైన పట్టు చీర';
+  }
+  if (category) {
+    return getProductTeluguSubtitle(category);
+  }
+  return 'స్వచ్ఛమైన చేనేత చీర';
+}
+
 export const HERO_ARCH_ITEMS = [
   {
     name: 'Royal Kanchipuram Silk',
